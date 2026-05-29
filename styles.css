@@ -1279,3 +1279,190 @@ background-size:cover;background-position:center;padding:110px 5%;
 .trust-box{background:var(--navy);color:#fff;padding:40px;border-radius:8px;margin:50px 0;}
 .author-box{display:flex;gap:20px;align-items:center;border-top:1px solid var(--cream-mid);padding-top:30px;margin-top:50px;}
 .whatsapp-float{position:fixed;bottom:25px;right:25px;background:var(--gold);color:var(--navy);padding:14px 22px;border-radius:4px;font-weight:700;text-decoration:none;box-shadow:var(--shadow-md);}
+
+
+/* ============================================================
+   MEJORAS ASUNTOS EDITORIALES Y ARTÍCULOS (BLOG)
+   ============================================================ */
+
+/* Encabezado del artículo con contraste premium garantizado */
+.article-hero {
+  position: relative;
+  background: linear-gradient(rgba(11, 25, 41, 0.88), rgba(11, 25, 41, 0.92)), 
+              url('https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1600&q=80');
+  background-size: cover;
+  background-position: center;
+  padding: 120px 5% 80px 5%;
+  text-align: center;
+  color: var(--white);
+}
+
+.article-hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.8rem;
+  color: var(--gold-light); /* Oro claro para contraste perfecto sobre el fondo azul oscuro */
+  max-width: 800px;
+  margin: 15px auto 25px auto;
+  line-height: 1.2;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.article-hero .eyebrow {
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.article-hero p {
+  color: var(--cream);
+  font-size: 1.15rem;
+  max-width: 650px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Caja de autor / Firma optimizada al final del artículo */
+.author-box {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: var(--cream-dark);
+  padding: 25px;
+  border-radius: var(--radius);
+  margin-top: 50px;
+  border-left: 4px solid var(--gold);
+}
+
+.author-avatar-svg {
+  width: 70px;
+  height: 70px;
+  background: var(--navy);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+.author-info h3 {
+  margin: 0 0 5px 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  color: var(--navy);
+}
+
+.author-info p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--text-mid);
+  line-height: 1.5;
+}
+
+/* Ajustes de diseño responsivo */
+@media (max-width: 768px) {
+  .article-hero h1 {
+    font-size: 2rem;
+  }
+  .author-box {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+}
+
+
+
+/* ============================================================
+   ESTILOS PREMIUM PARA ARTÍCULOS DE BLOG
+   ============================================================ */
+
+/* Encabezado del artículo con contraste optimizado */
+.article-hero {
+  position: relative;
+  background: linear-gradient(rgba(11, 25, 41, 0.88), rgba(11, 25, 41, 0.92)), 
+              url('https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1600&q=80');
+  background-size: cover;
+  background-position: center;
+  padding: 120px 5% 80px 5%;
+  text-align: center;
+  color: var(--white);
+}
+
+.article-hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.8rem;
+  color: var(--gold-light);
+  max-width: 800px;
+  margin: 15px auto 25px auto;
+  line-height: 1.2;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.article-hero .eyebrow {
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.article-hero p {
+  color: var(--cream);
+  font-size: 1.15rem;
+  max-width: 650px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Caja de Autor / Firma optimizada */
+.author-box {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: var(--cream-dark);
+  padding: 25px;
+  border-radius: var(--radius);
+  margin-top: 50px;
+  border-left: 4px solid var(--gold);
+}
+
+.author-avatar-svg {
+  width: 70px;
+  height: 70px;
+  background: var(--navy);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+.author-info h3 {
+  margin: 0 0 5px 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  color: var(--navy);
+}
+
+.author-info p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--text-mid);
+  line-height: 1.5;
+}
+
+/* Adaptabilidad móvil */
+@media (max-width: 768px) {
+  .article-hero h1 {
+    font-size: 2rem;
+  }
+  .author-box {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+}
