@@ -1260,3 +1260,22 @@ a.contact-method:hover {
   .topbar, .nav, .wa-float, .urgency-band { display: none; }
   .hero { background: none; color: var(--text-dark); }
 }
+
+
+/* ============================================================
+BLOG ARTICLES
+============================================================ */
+.article-hero{
+background:linear-gradient(rgba(11,25,41,.82),rgba(11,25,41,.82)),url('https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1600&q=80');
+background-size:cover;background-position:center;padding:110px 5%;
+}
+.blog-hero-inner,.blog-container{max-width:900px;margin:0 auto;}
+.quick-benefits,.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;max-width:1100px;margin:60px auto;padding:0 5%;}
+.benefit-card,.case-card{background:#fff;padding:24px;border-radius:8px;box-shadow:var(--shadow-sm);}
+.blog-content{padding:40px 0 80px;}
+.blog-container p{font-size:17px;line-height:1.9;margin-bottom:20px;}
+.highlight-box,.cta-final{background:var(--cream-dark);padding:32px;border-left:4px solid var(--gold);border-radius:8px;margin:40px 0;}
+.image-section img{border-radius:8px;}
+.trust-box{background:var(--navy);color:#fff;padding:40px;border-radius:8px;margin:50px 0;}
+.author-box{display:flex;gap:20px;align-items:center;border-top:1px solid var(--cream-mid);padding-top:30px;margin-top:50px;}
+.whatsapp-float{position:fixed;bottom:25px;right:25px;background:var(--gold);color:var(--navy);padding:14px 22px;border-radius:4px;font-weight:700;text-decoration:none;box-shadow:var(--shadow-md);}
