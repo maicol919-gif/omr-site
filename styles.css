@@ -1466,3 +1466,95 @@ background-size:cover;background-position:center;padding:110px 5%;
     padding: 20px;
   }
 }
+
+
+/* ============================================================
+   COMPONENTES ADICIONALES PARA ARTÍCULOS Y TABLAS (OMR JURÍDICO)
+   ============================================================ */
+
+.blog-container h2 {
+  margin-top: 45px;
+  margin-bottom: 18px;
+  font-family: var(--font-display);
+  color: var(--navy);
+}
+
+.blog-container h3 {
+  margin-top: 30px;
+  margin-bottom: 12px;
+  font-family: var(--font-display);
+  color: var(--navy-mid);
+}
+
+.blog-container ul {
+  margin-bottom: 30px;
+  padding-left: 20px;
+}
+
+.blog-container li {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 10px;
+  color: var(--text-mid);
+}
+
+/* Contenedor responsivo para la tabla */
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  margin: 40px 0;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Tabla premium adaptada a la estética de la firma */
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--white);
+  min-width: 600px;
+  font-size: 15px;
+}
+
+.schedule-table th, 
+.schedule-table td {
+  padding: 16px 20px;
+  border: 1px solid var(--cream-dark);
+  text-align: left;
+}
+
+.schedule-table th {
+  background-color: var(--navy);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.schedule-table tr:nth-child(even) {
+  background-color: rgba(245, 241, 233, 0.45); /* Variación suave sobre var(--cream) */
+}
+
+/* Caja de llamado a la acción final dentro del artículo */
+.article-cta-box {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+  border: 1px solid var(--gold-border);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  margin-top: 60px;
+  text-align: center;
+  color: var(--white);
+}
+
+.article-cta-box h3 {
+  color: var(--gold-light) !important;
+  font-size: 24px;
+  margin-bottom: 14px;
+}
+
+.article-cta-box p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 15.5px;
+  max-width: 680px;
+  margin: 0 auto 25px auto;
+}
