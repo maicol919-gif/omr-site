@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OMR Jurídico — Generador de Artículos SEO</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap');
+
+  :root {
+    --dark: #0f1117;
+    --surface: #1a1d27;
+    --surface2: #22263a;
+    --border: #2e3350;
+    --accent: #4f7fff;
+    --accent2: #7c3aed;
+    --green: #22c55e;
+    --yellow: #f59e0b;
+    --red: #ef4444;
+    --text: #e8eaf0;
+    --muted: #8892aa;
+    --white: #ffffff;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--dark);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+  }
+
+  /* HEADER */
+  header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 32px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .logo-badge {
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    color: white;
+    font-weight: 700;
+    font-size: 13px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    letter-spacing: 0.5px;
+  }
+  header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: var(--white);
+  }
+  .status-dot {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--green);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  /* LAYOUT */
+  .layout {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    height: calc(100vh - 57px);
+  }
+
+  /* SIDEBAR */
+  .sidebar {
+    background: var(--surface);
+    border-right: 1px solid var(--border);
+    padding: 24px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .section-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+
+  /* METRICS STRIP */
+  .metrics {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+  }
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 10px;
+  }
+  .metric-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .metric-value {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1;
+  }
+  .metric-value.accent { color: var(--accent); }
+  .metric-value.green { color: var(--green); }
+  .metric-label {
+    font-size: 11px;
+    color: var(--muted);
+  }
+  .metric-trend {
+    font-size: 10px;
+    color: var(--green);
+    margin-top: 2px;
+  }
+
+  /* CONSULTAS */
+  .consultas-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 10px;
+  }
+  .consulta-tag {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.15s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .consulta-tag:hover {
+    border-color: var(--accent);
+    background: rgba(79,127,255,0.08);
+  }
+  .consulta-tag .imp {
+    font-size: 10px;
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  /* CLUSTER SELECTOR */
+  .cluster-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 10px;
+  }
+  .cluster-btn {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 8px;
+    font-size: 11px;
+    color: var(--text);
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.15s;
+    font-family: 'Inter', sans-serif;
+  }
+  .cluster-btn:hover, .cluster-btn.active {
+    border-color: var(--accent);
+    background: rgba(79,127,255,0.1);
+    color: var(--white);
+  }
+  .cluster-btn .emoji { display: block; font-size: 18px; margin-bottom: 4px; }
+
+  /* FORM */
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--muted);
+    letter-spacing: 0.3px;
+  }
+  input, textarea, select {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    padding: 10px 12px;
+    outline: none;
+    transition: border-color 0.15s;
+    width: 100%;
+  }
+  input:focus, textarea:focus, select:focus {
+    border-color: var(--accent);
+  }
+  textarea { resize: vertical; min-height: 60px; }
+  select option { background: var(--surface2); }
+
+  /* GENERATE BTN */
+  .btn-generate {
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    border: none;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 14px;
+    width: 100%;
+    transition: opacity 0.2s, transform 0.1s;
+    letter-spacing: 0.3px;
+  }
+  .btn-generate:hover:not(:disabled) { opacity: 0.9; transform: translateY(-1px); }
+  .btn-generate:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+  /* MAIN */
+  .main {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  /* TABS */
+  .tabs {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    gap: 0;
+    padding: 0 24px;
+  }
+  .tab {
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    color: var(--muted);
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 14px 16px;
+    transition: all 0.15s;
+  }
+  .tab:hover { color: var(--text); }
+  .tab.active {
+    border-bottom-color: var(--accent);
+    color: var(--white);
+  }
+
+  /* OUTPUT AREA */
+  .output-area {
+    flex: 1;
+    overflow-y: auto;
+    padding: 24px;
+  }
+
+  /* EMPTY STATE */
+  .empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    gap: 12px;
+    color: var(--muted);
+    text-align: center;
+  }
+  .empty-icon { font-size: 48px; opacity: 0.4; }
+  .empty-state h3 { font-size: 16px; color: var(--text); }
+  .empty-state p { font-size: 13px; max-width: 300px; line-height: 1.6; }
+
+  /* LOADING */
+  .loading-state {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    gap: 16px;
+  }
+  .spinner {
+    width: 40px; height: 40px;
+    border: 3px solid var(--border);
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .loading-msg {
+    font-size: 14px;
+    color: var(--muted);
+    animation: fadeMsg 3s ease-in-out infinite;
+  }
+  @keyframes fadeMsg {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+  }
+
+  /* ARTICLE OUTPUT */
+  .article-output { display: none; }
+
+  /* SEO CARD */
+  .seo-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 16px;
+  }
+  .seo-card h3 {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 12px;
+  }
+  .seo-row {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .seo-item {
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+  }
+  .seo-key {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--accent);
+    min-width: 110px;
+    margin-top: 2px;
+  }
+  .seo-val {
+    font-size: 13px;
+    color: var(--text);
+    line-height: 1.5;
+  }
+
+  /* SCORES */
+  .scores-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  .score-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px;
+    text-align: center;
+  }
+  .score-num {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--green);
+    line-height: 1;
+  }
+  .score-num.mid { color: var(--yellow); }
+  .score-num.low { color: var(--red); }
+  .score-label { font-size: 10px; color: var(--muted); margin-top: 4px; }
+
+  /* ARTICLE CONTENT */
+  .article-content {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px;
+    margin-bottom: 16px;
+    line-height: 1.8;
+    font-size: 14px;
+  }
+  .article-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    color: var(--white);
+    margin-bottom: 20px;
+    line-height: 1.3;
+  }
+  .article-content h2 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--white);
+    margin: 28px 0 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+  .article-content h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+    margin: 20px 0 8px;
+  }
+  .article-content p { margin-bottom: 14px; color: var(--text); }
+  .article-content ul, .article-content ol {
+    margin: 10px 0 14px 20px;
+    color: var(--text);
+  }
+  .article-content li { margin-bottom: 6px; }
+  .article-content .cta-box {
+    background: linear-gradient(135deg, rgba(79,127,255,0.15), rgba(124,58,237,0.15));
+    border: 1px solid var(--accent);
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 28px;
+    text-align: center;
+  }
+  .article-content .cta-box p {
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 12px;
+  }
+  .cta-whatsapp {
+    display: inline-block;
+    background: #25d366;
+    color: white;
+    font-weight: 700;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
+  }
+
+  /* HTML OUTPUT */
+  .html-output {
+    background: #0d1117;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    color: #8b949e;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-break: break-word;
+    margin-bottom: 16px;
+    max-height: 500px;
+    overflow-y: auto;
+  }
+
+  /* ACTION BAR */
+  .action-bar {
+    display: none;
+    gap: 10px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+  }
+  .btn-action {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text);
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 8px 14px;
+    transition: all 0.15s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .btn-action:hover {
+    border-color: var(--accent);
+    color: var(--white);
+  }
+  .btn-action.primary {
+    background: var(--green);
+    border-color: var(--green);
+    color: #000;
+    font-weight: 700;
+  }
+  .btn-action.primary:hover { opacity: 0.9; }
+
+  /* TOAST */
+  .toast {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: var(--surface2);
+    border: 1px solid var(--green);
+    border-radius: 8px;
+    padding: 12px 18px;
+    font-size: 13px;
+    color: var(--green);
+    display: none;
+    animation: slideUp 0.3s ease;
+    z-index: 100;
+  }
+  @keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo-badge">OMR</div>
+  <h1>Generador de Artículos SEO</h1>
+  <div class="status-dot">
+    <div class="dot"></div>
+    IA activa
+  </div>
+</header>
+
+<div class="layout">
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <!-- MÉTRICAS REALES GSC -->
+    <div>
+      <div class="section-label">Search Console — Datos reales</div>
+      <div class="metrics">
+        <div class="metrics-grid">
+          <div class="metric-item">
+            <div class="metric-value accent">28</div>
+            <div class="metric-label">Impresiones totales</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-value">1</div>
+            <div class="metric-label">Clics totales</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-value green">15.7</div>
+            <div class="metric-label">Posición media</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-value">3.6%</div>
+            <div class="metric-label">CTR medio</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONSULTAS DETECTADAS -->
+    <div>
+      <div class="section-label">Consultas detectadas en Google</div>
+      <div class="consultas-list">
+        <div class="consulta-tag" onclick="usarConsulta('divorcio en colombia desde españa sin viajar')">
+          divorcio colombia
+          <span class="imp">4 imp</span>
+        </div>
+        <div class="consulta-tag" onclick="usarConsulta('exequatur divorcio colombia desde españa cuánto tarda')">
+          exequatur divorcio colombia
+          <span class="imp">1 imp</span>
+        </div>
+        <div class="consulta-tag" onclick="usarConsulta('divorcio de españoles residentes en el extranjero colombia')">
+          divorcio españoles extranjero colombia
+          <span class="imp">1 imp</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CLUSTERS -->
+    <div>
+      <div class="section-label">Cluster temático</div>
+      <div class="cluster-grid">
+        <button class="cluster-btn active" onclick="setCluster(this, 'divorcio')">
+          <span class="emoji">⚖️</span>Divorcio
+        </button>
+        <button class="cluster-btn" onclick="setCluster(this, 'herencias')">
+          <span class="emoji">🏠</span>Herencias
+        </button>
+        <button class="cluster-btn" onclick="setCluster(this, 'custodia')">
+          <span class="emoji">👶</span>Custodia
+        </button>
+        <button class="cluster-btn" onclick="setCluster(this, 'poderes')">
+          <span class="emoji">📋</span>Poderes
+        </button>
+        <button class="cluster-btn" onclick="setCluster(this, 'alimentos')">
+          <span class="emoji">💰</span>Alimentos
+        </button>
+        <button class="cluster-btn" onclick="setCluster(this, 'inmuebles')">
+          <span class="emoji">🏢</span>Inmuebles
+        </button>
+      </div>
+    </div>
+
+    <!-- FORMULARIO -->
+    <div class="form-group">
+      <label>KEYWORD / TEMA DEL ARTÍCULO</label>
+      <input type="text" id="keyword" placeholder="ej: divorcio en Colombia desde España" />
+    </div>
+
+    <div class="form-group">
+      <label>PAÍS OBJETIVO</label>
+      <select id="pais">
+        <option value="España">España (principal)</option>
+        <option value="Estados Unidos">Estados Unidos</option>
+        <option value="Europa en general">Europa en general</option>
+        <option value="Canadá">Canadá</option>
+        <option value="el exterior en general">Exterior en general</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>CONTEXTO ADICIONAL (opcional)</label>
+      <textarea id="contexto" placeholder="ej: enfocarse en el proceso sin viajar, mencionar poder notarial..."></textarea>
+    </div>
+
+    <button class="btn-generate" id="btnGenerar" onclick="generarArticulo()">
+      ✦ Generar artículo completo
+    </button>
+
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+    <div class="tabs">
+      <button class="tab active" onclick="setTab(this, 'preview')">Vista previa</button>
+      <button class="tab" onclick="setTab(this, 'html')">HTML para publicar</button>
+      <button class="tab" onclick="setTab(this, 'seo')">Ficha SEO</button>
+    </div>
+
+    <div class="output-area" id="outputArea">
+
+      <!-- EMPTY -->
+      <div class="empty-state" id="emptyState">
+        <div class="empty-icon">✦</div>
+        <h3>Listo para generar</h3>
+        <p>Selecciona un cluster, escribe el tema y pulsa generar. El artículo aparecerá aquí completo y listo para publicar.</p>
+      </div>
+
+      <!-- LOADING -->
+      <div class="loading-state" id="loadingState">
+        <div class="spinner"></div>
+        <div class="loading-msg" id="loadingMsg">Analizando intención de búsqueda...</div>
+      </div>
+
+      <!-- OUTPUT -->
+      <div class="article-output" id="articleOutput">
+
+        <div class="action-bar" id="actionBar">
+          <button class="btn-action primary" onclick="copiarHTML()">📋 Copiar HTML</button>
+          <button class="btn-action" onclick="copiarMarkdown()">📄 Copiar texto</button>
+          <button class="btn-action" onclick="generarNuevo()">↺ Regenerar</button>
+        </div>
+
+        <!-- SCORES -->
+        <div class="scores-grid" id="scoresGrid"></div>
+
+        <!-- SEO FICHA -->
+        <div class="seo-card" id="fichaSection">
+          <h3>Ficha SEO</h3>
+          <div class="seo-row" id="fichaContent"></div>
+        </div>
+
+        <!-- PREVIEW TAB -->
+        <div id="tabPreview">
+          <div class="article-content" id="articlePreview"></div>
+        </div>
+
+        <!-- HTML TAB -->
+        <div id="tabHtml" style="display:none">
+          <div class="html-output" id="htmlOutput"></div>
+        </div>
+
+        <!-- SEO TAB -->
+        <div id="tabSeo" style="display:none">
+          <div class="seo-card">
+            <h3>Análisis de oportunidad</h3>
+            <div class="seo-row" id="seoAnalysis"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+<div class="toast" id="toast">✓ Copiado al portapapeles</div>
+
+<script>
+let clusterActual = 'divorcio';
+let articuloGenerado = null;
+let htmlGenerado = '';
+
+const loadingMsgs = [
+  'Analizando intención de búsqueda...',
+  'Construyendo estructura SEO...',
+  'Redactando contenido jurídico...',
+  'Añadiendo FAQs y CTAs...',
+  'Optimizando para conversión...',
+];
+
+function setCluster(btn, cluster) {
+  document.querySelectorAll('.cluster-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  clusterActual = cluster;
+}
+
+function usarConsulta(texto) {
+  document.getElementById('keyword').value = texto;
+}
+
+function setTab(btn, tab) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('tabPreview').style.display = tab === 'preview' ? 'block' : 'none';
+  document.getElementById('tabHtml').style.display = tab === 'html' ? 'block' : 'none';
+  document.getElementById('tabSeo').style.display = tab === 'seo' ? 'block' : 'none';
+}
+
+function mostrarToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = '✓ ' + msg;
+  t.style.display = 'block';
+  setTimeout(() => t.style.display = 'none', 2500);
+}
+
+function copiarHTML() {
+  navigator.clipboard.writeText(htmlGenerado).then(() => mostrarToast('HTML copiado'));
+}
+
+function copiarMarkdown() {
+  const texto = document.getElementById('articlePreview').innerText;
+  navigator.clipboard.writeText(texto).then(() => mostrarToast('Texto copiado'));
+}
+
+function generarNuevo() {
+  generarArticulo();
+}
+
+async function generarArticulo() {
+  const keyword = document.getElementById('keyword').value.trim();
+  if (!keyword) {
+    document.getElementById('keyword').focus();
+    return;
+  }
+
+  const pais = document.getElementById('pais').value;
+  const contexto = document.getElementById('contexto').value.trim();
+
+  // UI loading
+  document.getElementById('emptyState').style.display = 'none';
+  document.getElementById('articleOutput').style.display = 'none';
+  document.getElementById('actionBar').style.display = 'none';
+  document.getElementById('loadingState').style.display = 'flex';
+  document.getElementById('btnGenerar').disabled = true;
+
+  // Rotar mensajes loading
+  let msgIdx = 0;
+  const msgInterval = setInterval(() => {
+    msgIdx = (msgIdx + 1) % loadingMsgs.length;
+    document.getElementById('loadingMsg').textContent = loadingMsgs[msgIdx];
+  }, 2500);
+
+  const prompt = `Eres el redactor SEO senior de OMR Jurídico, un despacho colombiano de derecho de familia especializado en colombianos radicados en ${pais} que necesitan resolver asuntos legales en Colombia sin viajar.
+
+KEYWORD PRINCIPAL: "${keyword}"
+CLUSTER TEMÁTICO: ${clusterActual}
+PAÍS OBJETIVO: ${pais}
+CONTEXTO ADICIONAL: ${contexto || 'ninguno'}
+
+Genera un artículo SEO completo en español optimizado para posicionar en Google y convertir lectores en consultas por WhatsApp.
+
+Responde ÚNICAMENTE con un objeto JSON con esta estructura exacta (sin markdown, sin backticks, solo JSON puro):
+
+{
+  "titulo_seo": "título SEO con keyword, máximo 60 caracteres",
+  "meta_descripcion": "meta descripción atractiva con keyword, máximo 155 caracteres",
+  "slug": "slug-seo-en-minusculas-con-guiones",
+  "keyword_principal": "keyword principal exacta",
+  "keywords_secundarias": ["kw1", "kw2", "kw3", "kw4", "kw5"],
+  "intencion": "descripción de la intención de búsqueda del usuario",
+  "trafico_potencial": 7,
+  "dificultad_seo": 4,
+  "intencion_contratacion": 9,
+  "prioridad": 8,
+  "h1": "H1 del artículo",
+  "articulo_html": "artículo completo en HTML con H2, H3, párrafos, listas, FAQ y CTA a WhatsApp. El CTA debe ser un enlace a https://wa.me/573XXXXXXXXX?text=Hola%20Dr.%20Omar%2C%20leí%20su%20artículo%20sobre%20[tema]%20y%20quisiera%20una%20consulta%20gratuita. Mínimo 1200 palabras de contenido real y útil. NO incluir el H1 dentro del HTML.",
+  "estructura": ["H2: sección 1", "H2: sección 2", "H2: sección 3"],
+  "faq": [{"pregunta": "pregunta 1", "respuesta": "respuesta 1"}, {"pregunta": "pregunta 2", "respuesta": "respuesta 2"}, {"pregunta": "pregunta 3", "respuesta": "respuesta 3"}],
+  "notas_seo": "observaciones estratégicas sobre el artículo y su potencial"
+}`;
+
+  try {
+    const response = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-6',
+        max_tokens: 4000,
+        messages: [{ role: 'user', content: prompt }]
+      })
+    });
+
+    const data = await response.json();
+    const raw = data.content.find(b => b.type === 'text')?.text || '';
+    const clean = raw.replace(/```json|```/g, '').trim();
+    const art = JSON.parse(clean);
+    articuloGenerado = art;
+
+    clearInterval(msgInterval);
+    renderArticulo(art);
+
+  } catch (err) {
+    clearInterval(msgInterval);
+    document.getElementById('loadingState').style.display = 'none';
+    document.getElementById('emptyState').style.display = 'flex';
+    document.getElementById('emptyState').innerHTML = `<div class="empty-icon">⚠️</div><h3>Error al generar</h3><p>${err.message}</p>`;
+    document.getElementById('btnGenerar').disabled = false;
+  }
+}
+
+function renderArticulo(art) {
+  // Scores
+  const scores = document.getElementById('scoresGrid');
+  scores.innerHTML = `
+    <div class="score-card">
+      <div class="score-num ${art.trafico_potencial >= 7 ? '' : art.trafico_potencial >= 5 ? 'mid' : 'low'}">${art.trafico_potencial}/10</div>
+      <div class="score-label">Tráfico potencial</div>
+    </div>
+    <div class="score-card">
+      <div class="score-num ${art.intencion_contratacion >= 7 ? '' : art.intencion_contratacion >= 5 ? 'mid' : 'low'}">${art.intencion_contratacion}/10</div>
+      <div class="score-label">Intención contratación</div>
+    </div>
+    <div class="score-card">
+      <div class="score-num ${art.dificultad_seo <= 4 ? '' : art.dificultad_seo <= 6 ? 'mid' : 'low'}">${art.dificultad_seo}/10</div>
+      <div class="score-label">Dificultad SEO</div>
+    </div>
+    <div class="score-card">
+      <div class="score-num ${art.prioridad >= 7 ? '' : art.prioridad >= 5 ? 'mid' : 'low'}">${art.prioridad}/10</div>
+      <div class="score-label">Prioridad final</div>
+    </div>
+  `;
+
+  // Ficha SEO
+  document.getElementById('fichaContent').innerHTML = `
+    <div class="seo-item"><span class="seo-key">Título SEO</span><span class="seo-val">${art.titulo_seo}</span></div>
+    <div class="seo-item"><span class="seo-key">Meta descripción</span><span class="seo-val">${art.meta_descripcion}</span></div>
+    <div class="seo-item"><span class="seo-key">Slug</span><span class="seo-val">/${art.slug}/</span></div>
+    <div class="seo-item"><span class="seo-key">Keyword principal</span><span class="seo-val">${art.keyword_principal}</span></div>
+    <div class="seo-item"><span class="seo-key">Keywords secundarias</span><span class="seo-val">${art.keywords_secundarias?.join(', ')}</span></div>
+    <div class="seo-item"><span class="seo-key">Intención</span><span class="seo-val">${art.intencion}</span></div>
+  `;
+
+  // Preview
+  document.getElementById('articlePreview').innerHTML = `
+    <h1>${art.h1}</h1>
+    ${art.articulo_html}
+  `;
+
+  // HTML completo para publicar
+  const htmlCompleto = generarHTMLCompleto(art);
+  htmlGenerado = htmlCompleto;
+  document.getElementById('htmlOutput').textContent = htmlCompleto;
+
+  // SEO Analysis
+  document.getElementById('seoAnalysis').innerHTML = `
+    <div class="seo-item"><span class="seo-key">Estructura</span><span class="seo-val">${art.estructura?.join(' → ')}</span></div>
+    <div class="seo-item"><span class="seo-key">Notas SEO</span><span class="seo-val">${art.notas_seo}</span></div>
+    ${art.faq?.map(f => `<div class="seo-item"><span class="seo-key">FAQ</span><span class="seo-val"><strong>${f.pregunta}</strong><br>${f.respuesta}</span></div>`).join('')}
+  `;
+
+  // Mostrar
+  document.getElementById('loadingState').style.display = 'none';
+  document.getElementById('articleOutput').style.display = 'block';
+  document.getElementById('actionBar').style.display = 'flex';
+  document.getElementById('btnGenerar').disabled = false;
+}
+
+function generarHTMLCompleto(art) {
+  return `<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>${art.titulo_seo}</title>
+  <meta name="description" content="${art.meta_descripcion}">
+  <meta name="keywords" content="${art.keyword_principal}, ${art.keywords_secundarias?.join(', ')}">
+  <link rel="canonical" href="https://omrjuridico.com/blog/${art.slug}/">
+  <meta property="og:title" content="${art.titulo_seo}">
+  <meta property="og:description" content="${art.meta_descripcion}">
+  <meta property="og:url" content="https://omrjuridico.com/blog/${art.slug}/">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "${art.h1}",
+    "description": "${art.meta_descripcion}",
+    "author": {
+      "@type": "Person",
+      "name": "Dr. Omar Martínez",
+      "jobTitle": "Abogado de Familia"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "OMR Jurídico",
+      "url": "https://omrjuridico.com"
+    }
+  }
+  <\/script>
+</head>
+<body>
+  <article>
+    <h1>${art.h1}</h1>
+    ${art.articulo_html}
+  </article>
+</body>
+</html>`;
+}
+</script>
+</body>
+</html>
