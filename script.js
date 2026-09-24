@@ -211,6 +211,7 @@
         submitBtn.disabled    = false;
 
         // Abrir WhatsApp
+        if (typeof gtag === 'function') gtag('event', 'contacto_whatsapp', { metodo: 'formulario' });
         window.open(waUrl, '_blank', 'noopener,noreferrer');
       }, 600);
     });
