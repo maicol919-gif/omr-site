@@ -7,6 +7,8 @@
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    var omrC; try { omrC = localStorage.getItem('omr_cookies'); } catch (e) {}
+    gtag('consent', 'default', { analytics_storage: omrC === 'si' ? 'granted' : 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
     gtag('js', new Date());
     gtag('config', 'G-GMC2RYYY7G', { allow_google_signals: false, allow_ad_personalization_signals: false });
     document.addEventListener('click', function (e) { var a = e.target.closest && e.target.closest('a[href*="wa.me"]'); if (a) gtag('event', 'contacto_whatsapp', { metodo: 'boton' }); });
@@ -165,8 +167,8 @@
       <div class="hero-left">
         <p class="eyebrow">Colombianos en España · Sin viajar a Colombia</p>
         <h1 id="hero-h1">
-          Mientras sigas casado<br>
-          en Colombia, tu<br>
+          Mientras siga casado<br>
+          en Colombia, su<br>
           <em>patrimonio está en riesgo.</em>
         </h1>
         <p class="hero-sub">Divorcio, custodia, herencias y liquidación de bienes colombianos — resueltos desde España
@@ -201,7 +203,7 @@
       </div>
 
       <div class="hero-card" role="complementary" aria-label="Situaciones más comunes">
-        <p class="hero-card-label">¿Tu situación es alguna de estas?</p>
+        <p class="hero-card-label">¿Su situación es alguna de estas?</p>
         <ul class="pain-list" role="list">
           <li>
             <span class="pain-icon" aria-hidden="true">→</span>
@@ -209,7 +211,7 @@
           </li>
           <li>
             <span class="pain-icon" aria-hidden="true">→</span>
-            <span>Tienes bienes o propiedades en Colombia sin liquidar</span>
+            <span>Tiene bienes o propiedades en Colombia sin liquidar</span>
           </li>
           <li>
             <span class="pain-icon" aria-hidden="true">→</span>
@@ -217,15 +219,15 @@
           </li>
           <li>
             <span class="pain-icon" aria-hidden="true">→</span>
-            <span>Tu expareja está usando tus bienes o no cumple pensiones</span>
+            <span>Su expareja está usando sus bienes o no cumple pensiones</span>
           </li>
           <li>
             <span class="pain-icon" aria-hidden="true">→</span>
-            <span>No puedes ver a tus hijos o los acuerdos de custodia no se cumplen</span>
+            <span>No puede ver a sus hijos o los acuerdos de custodia no se cumplen</span>
           </li>
         </ul>
         <a href="https://wa.me/573194205304?text=Hola%2C%20tengo%20una%20situaci%C3%B3n%20legal%20en%20Colombia%20y%20vivo%20en%20Espa%C3%B1a"
-          target="_blank" rel="noopener" class="hero-card-cta">Cuéntame tu caso →</a>
+          target="_blank" rel="noopener" class="hero-card-cta">Cuénteme su caso →</a>
       </div>
     </div>
   </section>
@@ -235,8 +237,8 @@
     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
       <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" />
     </svg>
-    <strong>Importante:</strong> Cada mes sin liquidar tu sociedad conyugal o iniciar la sucesión puede costar bienes.
-    Los plazos legales en Colombia no se detienen porque vivas en el exterior.
+    <strong>Importante:</strong> Cada mes sin liquidar su sociedad conyugal o iniciar la sucesión puede costar bienes.
+    Los plazos legales en Colombia no se detienen porque usted viva en el exterior.
   </div>
 
   <!-- ========= SERVICES ========= -->
@@ -448,6 +450,7 @@
   </a>
 
   <script src="script.js"></script>
+<script src="cookies.js" defer></script>
 </body>
 
 </html>

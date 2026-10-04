@@ -6,6 +6,8 @@
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    var omrC; try { omrC = localStorage.getItem('omr_cookies'); } catch (e) {}
+    gtag('consent', 'default', { analytics_storage: omrC === 'si' ? 'granted' : 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
     gtag('js', new Date());
     gtag('config', 'G-GMC2RYYY7G', { allow_google_signals: false, allow_ad_personalization_signals: false });
     document.addEventListener('click', function (e) { var a = e.target.closest && e.target.closest('a[href*="wa.me"]'); if (a) gtag('event', 'contacto_whatsapp', { metodo: 'boton' }); });
@@ -77,8 +79,8 @@
 <main style="max-width:780px;margin:60px auto;padding:0 24px;font-family:'DM Sans',sans-serif;color:#1a1a2e;line-height:1.8;">
 
   <p style="font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#d4af37;">Documentación legal</p>
-  <h1 style="font-size:clamp(28px,5vw,42px);color:#0a1628;line-height:1.2;margin-bottom:16px;">Apostilla en España para Trámites en Colombia: Todo lo que Necesitas Saber</h1>
-  <p style="color:#5a6070;font-size:16px;margin-bottom:40px;">La apostilla es el sello internacional que convierte un documento español en válido para Colombia. Si vas a hacer cualquier trámite legal en Colombia desde España — divorcio, herencia, venta de propiedad — casi seguro necesitas apostillar algún documento. Aquí te explicamos todo.</p>
+  <h1 style="font-size:clamp(28px,5vw,42px);color:#0a1628;line-height:1.2;margin-bottom:16px;">Apostilla en España para Trámites en Colombia: Todo lo que Necesita Saber</h1>
+  <p style="color:#5a6070;font-size:16px;margin-bottom:40px;">La apostilla es el sello internacional que convierte un documento español en válido para Colombia. Si va a hacer cualquier trámite legal en Colombia desde España — divorcio, herencia, venta de propiedad — casi seguro necesita apostillar algún documento. Aquí le explicamos todo.</p>
 
   <h2 style="color:#0a1628;font-size:24px;margin-top:40px;">¿Qué es la apostilla de La Haya?</h2>
   <p>La apostilla es una certificación internacional creada por el Convenio de La Haya de 1961, al que pertenecen tanto España como Colombia. Su función es simple: cuando un documento público (notarial, judicial o administrativo) lleva apostilla, es reconocido automáticamente como auténtico en cualquier país miembro del convenio sin necesidad de más legalizaciones.</p>
@@ -125,18 +127,18 @@
 
   <h3 style="color:#0a1628;font-size:20px;margin-top:24px;">Opción 1: Presencialmente</h3>
   <ol style="padding-left:24px;">
-    <li style="margin-bottom:12px;">Acude a la Gerencia Territorial del Ministerio de Justicia más cercana a tu ciudad.</li>
-    <li style="margin-bottom:12px;">Lleva el documento original que quieres apostillar.</li>
-    <li style="margin-bottom:12px;">Paga la tasa correspondiente (3,70 euros por documento).</li>
-    <li style="margin-bottom:12px;">En la mayoría de oficinas te lo entregan el mismo día o al día siguiente.</li>
+    <li style="margin-bottom:12px;">Acuda a la Gerencia Territorial del Ministerio de Justicia más cercana a su ciudad.</li>
+    <li style="margin-bottom:12px;">Lleve el documento original que quiere apostillar.</li>
+    <li style="margin-bottom:12px;">Pague la tasa correspondiente (3,70 euros por documento).</li>
+    <li style="margin-bottom:12px;">En la mayoría de oficinas se lo entregan el mismo día o al día siguiente.</li>
   </ol>
 
   <h3 style="color:#0a1628;font-size:20px;margin-top:24px;">Opción 2: Online (sede electrónica)</h3>
   <ol style="padding-left:24px;">
-    <li style="margin-bottom:12px;">Entra a <strong>sede.mjusticia.gob.es</strong></li>
-    <li style="margin-bottom:12px;">Busca "Apostilla de La Haya" en el buscador de la sede.</li>
-    <li style="margin-bottom:12px;">Selecciona el tipo de documento y sigue los pasos.</li>
-    <li style="margin-bottom:12px;">Necesitas certificado digital o Cl@ve para identificarte.</li>
+    <li style="margin-bottom:12px;">Entre en <strong>sede.mjusticia.gob.es</strong></li>
+    <li style="margin-bottom:12px;">Busque "Apostilla de La Haya" en el buscador de la sede.</li>
+    <li style="margin-bottom:12px;">Seleccione el tipo de documento y siga los pasos.</li>
+    <li style="margin-bottom:12px;">Necesita certificado digital o Cl@ve para identificarse.</li>
     <li style="margin-bottom:12px;">El tiempo de resolución online puede ser de hasta 15 días hábiles.</li>
   </ol>
 
@@ -158,13 +160,13 @@
   <h2 style="color:#0a1628;font-size:24px;margin-top:40px;">Errores frecuentes</h2>
   <ul style="padding-left:24px;">
     <li style="margin-bottom:12px;"><strong>Apostillar una fotocopia:</strong> La apostilla solo se coloca en documentos originales o copias auténticas. Las fotocopias simples no son válidas.</li>
-    <li style="margin-bottom:12px;"><strong>Confundir apostilla con legalización consular:</strong> La apostilla reemplaza la legalización consular entre países del Convenio de La Haya. No necesitas ambas.</li>
-    <li style="margin-bottom:12px;"><strong>No verificar el idioma:</strong> Si tu abogado en Colombia requiere el documento en español (que es lo normal para poderes notariales), no necesitas traducción. Pero si el documento original está en catalán, euskera u otra lengua cooficial, puede que necesites una traducción oficial al castellano.</li>
+    <li style="margin-bottom:12px;"><strong>Confundir apostilla con legalización consular:</strong> La apostilla reemplaza la legalización consular entre países del Convenio de La Haya. No necesita ambas.</li>
+    <li style="margin-bottom:12px;"><strong>No verificar el idioma:</strong> Si su abogado en Colombia requiere el documento en español (que es lo normal para poderes notariales), no necesita traducción. Pero si el documento original está en catalán, euskera u otra lengua cooficial, puede que necesite una traducción oficial al castellano.</li>
   </ul>
 
   <div style="background:#0a1628;color:#fff;padding:32px;border-radius:4px;margin:48px 0;">
-    <h3 style="color:#d4af37;margin-top:0;">¿Necesitas orientación sobre qué documentos apostillar para tu trámite?</h3>
-    <p style="margin-bottom:24px;">El Dr. Omar Martínez te indica exactamente qué necesitas según tu caso. La consulta es gratuita.</p>
+    <h3 style="color:#d4af37;margin-top:0;">¿Necesita orientación sobre qué documentos apostillar para su trámite?</h3>
+    <p style="margin-bottom:24px;">El Dr. Omar Martínez le indica exactamente qué necesita según su caso. La consulta es gratuita.</p>
     <a href="https://wa.me/573194205304?text=Hola%2C%20necesito%20saber%20qué%20documentos%20debo%20apostillar%20para%20mi%20trámite%20en%20Colombia" target="_blank" style="background:#d4af37;color:#0a1628;padding:14px 28px;text-decoration:none;font-weight:700;border-radius:3px;display:inline-block;">Consulta gratuita por WhatsApp →</a>
   </div>
 
@@ -174,16 +176,16 @@
   <p>La apostilla en sí no vence, pero el documento que certifica sí puede tener vigencia limitada. Por ejemplo, un certificado de antecedentes penales suele tener validez de 3 meses para trámites en Colombia.</p>
 
   <h3 style="color:#0a1628;font-size:18px;margin-top:24px;">¿Necesito traducción al español del documento apostillado?</h3>
-  <p>Si el documento está en español (como un poder notarial otorgado ante notario español), no necesitas traducción. Solo si está en otro idioma.</p>
+  <p>Si el documento está en español (como un poder notarial otorgado ante notario español), no necesita traducción. Solo si está en otro idioma.</p>
 
   <h3 style="color:#0a1628;font-size:18px;margin-top:24px;">¿Se puede apostillar en cualquier ciudad de España?</h3>
-  <p>Sí, puedes acudir a la Gerencia Territorial del Ministerio de Justicia de cualquier ciudad española, independientemente de donde vivas.</p>
+  <p>Sí, puede acudir a la Gerencia Territorial del Ministerio de Justicia de cualquier ciudad española, independientemente de donde viva.</p>
 
 </main>
 
 <section style="background:#f7f5f0;border-top:1px solid #e8e4dc;text-align:center;padding:60px 24px;">
-  <h2 style="color:#0a1628;font-size:24px;">¿Tu caso no está aquí?</h2>
-  <p style="color:#5a6070;margin-bottom:28px;">Cuéntanos tu situación. La primera consulta es gratuita y sin compromiso.</p>
+  <h2 style="color:#0a1628;font-size:24px;">¿Su caso no está aquí?</h2>
+  <p style="color:#5a6070;margin-bottom:28px;">Cuéntenos su situación. La primera consulta es gratuita y sin compromiso.</p>
   <a href="https://wa.me/573194205304" target="_blank" style="background:#25d366;color:#fff;padding:14px 28px;border-radius:3px;text-decoration:none;font-weight:600;font-size:15px;">Consulta gratuita por WhatsApp</a>
 </section>
 
@@ -198,5 +200,6 @@
   <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
+<script src="../cookies.js" defer></script>
 </body>
 </html>

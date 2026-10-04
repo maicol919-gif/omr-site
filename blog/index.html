@@ -6,6 +6,8 @@
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    var omrC; try { omrC = localStorage.getItem('omr_cookies'); } catch (e) {}
+    gtag('consent', 'default', { analytics_storage: omrC === 'si' ? 'granted' : 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
     gtag('js', new Date());
     gtag('config', 'G-GMC2RYYY7G', { allow_google_signals: false, allow_ad_personalization_signals: false });
     document.addEventListener('click', function (e) { var a = e.target.closest && e.target.closest('a[href*="wa.me"]'); if (a) gtag('event', 'contacto_whatsapp', { metodo: 'boton' }); });
@@ -52,7 +54,7 @@
 <section class="blog-hero">
   <p class="eyebrow">— Recursos legales gratuitos</p>
   <h1>Guías para colombianos<br>en el exterior</h1>
-  <p>Todo lo que necesitas saber sobre derecho de familia colombiano, sin viajar a Colombia.</p>
+  <p>Todo lo que necesita saber sobre derecho de familia colombiano, sin viajar a Colombia.</p>
 </section>
 
 <div class="blog-grid">
@@ -64,26 +66,27 @@
   <article class="blog-card"><div class="card-tag">Registro civil</div><div class="card-body"><h2>Inscribir en Colombia un Matrimonio Celebrado en España</h2><p>Paso previo para divorciarse o repartir bienes en Colombia: documentos, consulado y errores frecuentes.</p><a class="card-link" href="inscribir-matrimonio-espanol-colombia.html">Leer artículo →</a></div></article>
   <article class="blog-card"><div class="card-tag">Trámites</div><div class="card-body"><h2>Poder Notarial en Colombia desde España: Guía Completa</h2><p>Cómo obtener un poder notarial en España para trámites en Colombia. Pasos, costos, apostilla y errores frecuentes.</p><a class="card-link" href="poder-notarial-colombia-desde-espana.html">Leer artículo →</a></div></article>
   <article class="blog-card"><div class="card-tag">Documentación</div><div class="card-body"><h2>Apostilla en España para Trámites en Colombia</h2><p>Qué es la apostilla, cómo tramitarla, dónde hacerlo y cuánto cuesta. Guía esencial para colombianos en España.</p><a class="card-link" href="apostilla-espana-colombia.html">Leer artículo →</a></div></article>
-  <article class="blog-card"><div class="card-tag">Divorcio</div><div class="card-body"><h2>¿Cómo divorciarse en Colombia viviendo en España?</h2><p>Guía completa para tramitar tu divorcio en Colombia a distancia. Requisitos, tiempos y opciones disponibles.</p><a class="card-link" href="divorcio-colombia-desde-espana.html">Leer artículo →</a></div></article>
-  <article class="blog-card"><div class="card-tag">Divorcio</div><div class="card-body"><h2>Exequátur: Cómo Hacer Válido tu Divorcio Colombiano en España</h2><p>Qué es el exequátur, cuándo lo necesitas y cómo hacer que tu divorcio en Colombia tenga efectos en España.</p><a class="card-link" href="exequatur-divorcio-colombiano-espana.html">Leer artículo →</a></div></article>
+  <article class="blog-card"><div class="card-tag">Divorcio</div><div class="card-body"><h2>¿Cómo divorciarse en Colombia viviendo en España?</h2><p>Guía completa para tramitar su divorcio en Colombia a distancia. Requisitos, tiempos y opciones disponibles.</p><a class="card-link" href="divorcio-colombia-desde-espana.html">Leer artículo →</a></div></article>
+  <article class="blog-card"><div class="card-tag">Divorcio</div><div class="card-body"><h2>Exequátur: Cómo Hacer Válido su Divorcio Colombiano en España</h2><p>Qué es el exequátur, cuándo lo necesita y cómo hacer que su divorcio en Colombia tenga efectos en España.</p><a class="card-link" href="exequatur-divorcio-colombiano-espana.html">Leer artículo →</a></div></article>
   <article class="blog-card"><div class="card-tag">Familia</div><div class="card-body"><h2>Unión Marital de Hecho en Colombia desde España</h2><p>Qué derechos genera vivir en pareja sin casarse en Colombia y cómo gestionar la unión o disolución desde España.</p><a class="card-link" href="union-marital-hecho-colombia-desde-espana.html">Leer artículo →</a></div></article>
-  <article class="blog-card"><div class="card-tag">Custodia</div><div class="card-body"><h2>Cómo Cambiar la Custodia en Colombia desde España</h2><p>Cuándo procede el cambio de custodia, cómo solicitarlo sin viajar y tus derechos como padre en el exterior.</p><a class="card-link" href="cambiar-custodia-colombia-desde-espana.html">Leer artículo →</a></div></article>
-  <article class="blog-card"><div class="card-tag">Alimentos</div><div class="card-body"><h2>Cuota Alimentaria en Colombia: Cómo se Fija y Cómo se Exige</h2><p>Cómo se calcula la pensión de alimentos en Colombia y qué hacer si tu expareja no cumple desde el exterior.</p><a class="card-link" href="cuota-alimentaria-colombia.html">Leer artículo →</a></div></article>
+  <article class="blog-card"><div class="card-tag">Custodia</div><div class="card-body"><h2>Cómo Cambiar la Custodia en Colombia desde España</h2><p>Cuándo procede el cambio de custodia, cómo solicitarlo sin viajar y sus derechos como padre en el exterior.</p><a class="card-link" href="cambiar-custodia-colombia-desde-espana.html">Leer artículo →</a></div></article>
+  <article class="blog-card"><div class="card-tag">Alimentos</div><div class="card-body"><h2>Cuota Alimentaria en Colombia: Cómo se Fija y Cómo se Exige</h2><p>Cómo se calcula la pensión de alimentos en Colombia y qué hacer si su expareja no cumple desde el exterior.</p><a class="card-link" href="cuota-alimentaria-colombia.html">Leer artículo →</a></div></article>
   <article class="blog-card"><div class="card-tag">Alimentos</div><div class="card-body"><h2>Pensión Alimenticia en Colombia: Guía Práctica</h2><p>Quién tiene derecho, cómo solicitarla y cómo hacerla cumplir desde España.</p><a class="card-link" href="pension-alimenticia-colombia-desde-espana.html">Leer artículo →</a></div></article>
-  <article class="blog-card"><div class="card-tag">Sucesiones</div><div class="card-body"><h2>Herencia sin Testamento en Colombia: Qué dice la Ley</h2><p>Quién hereda y cómo iniciar la sucesión intestada para proteger tu parte de la herencia desde España.</p><a class="card-link" href="herencia-sin-testamento-colombia.html">Leer artículo →</a></div></article>
+  <article class="blog-card"><div class="card-tag">Sucesiones</div><div class="card-body"><h2>Herencia sin Testamento en Colombia: Qué dice la Ley</h2><p>Quién hereda y cómo iniciar la sucesión intestada para proteger su parte de la herencia desde España.</p><a class="card-link" href="herencia-sin-testamento-colombia.html">Leer artículo →</a></div></article>
   <article class="blog-card"><div class="card-tag">Propiedades</div><div class="card-body"><h2>Cómo Vender una Propiedad en Colombia viviendo en España</h2><p>Poder notarial, impuestos, trámites y errores que evitar para vender un inmueble en Colombia sin viajar.</p><a class="card-link" href="vender-propiedad-colombia-desde-espana.html">Leer artículo →</a></div></article>
   <article class="blog-card"><div class="card-tag">Divorcio</div><div class="card-body"><h2>¿Cuánto Cuesta Divorciarse en Colombia desde España?</h2><p>Desglose real de costos: honorarios de abogado, gastos notariales, apostilla y exequátur. Sin sorpresas ni letras pequeñas.</p><a class="card-link" href="costo-divorcio-colombia-desde-espana.html">Leer artículo →</a></div></article>
-  <article class="blog-card"><div class="card-tag">Trámites</div><div class="card-body"><h2>Documentos Colombianos para tu Regularización en España 2026</h2><p>¿Tramitando la regularización extraordinaria? Gestionamos desde Colombia tus antecedentes apostillados y registros civiles antes del 30 de junio.</p><a class="card-link" href="documentos-colombianos-regularizacion-espana.html">Leer artículo →</a></div></article>
+  <article class="blog-card"><div class="card-tag">Trámites</div><div class="card-body"><h2>Documentos Colombianos para su Regularización en España 2026</h2><p>¿Tramitando la regularización extraordinaria? Gestionamos desde Colombia sus antecedentes apostillados y registros civiles antes del 30 de junio.</p><a class="card-link" href="documentos-colombianos-regularizacion-espana.html">Leer artículo →</a></div></article>
 </div>
 
 <section class="blog-cta">
-  <h2>¿Tu caso no está aquí?</h2>
-  <p>Cuéntanos tu situación. La primera consulta es gratuita y sin compromiso.</p>
+  <h2>¿Su caso no está aquí?</h2>
+  <p>Cuéntenos su situación. La primera consulta es gratuita y sin compromiso.</p>
   <a class="btn-wa" href="https://wa.me/573194205304?text=Hola%20Dr.%20Omar%2C%20vi%20su%20blog%20y%20quisiera%20una%20consulta%20gratuita%20sobre%20mi%20caso%20en%20Colombia" target="_blank">Consulta gratuita por WhatsApp</a>
 </section>
 
 <footer class="footer"><div class="footer-inner"><p>© 2026 Dr. Omar Martínez – Abogado Derecho de Familia Colombia</p><p>Atención para colombianos en España y el exterior · <a href="https://wa.me/573194205304?text=Hola%20Dr.%20Omar%2C%20vi%20su%20blog%20y%20quisiera%20una%20consulta%20gratuita%20sobre%20mi%20caso%20en%20Colombia">+57 319 420 5304</a></p></div></footer>
 <a href="https://wa.me/573194205304?text=Hola%20Dr.%20Omar%2C%20vi%20su%20blog%20y%20quisiera%20una%20consulta%20gratuita%20sobre%20mi%20caso%20en%20Colombia" class="whatsapp-float" target="_blank" aria-label="WhatsApp"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+<script src="../cookies.js" defer></script>
 </body>
 </html>
 
