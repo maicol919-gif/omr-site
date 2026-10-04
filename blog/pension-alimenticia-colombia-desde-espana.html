@@ -6,6 +6,8 @@
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    var omrC; try { omrC = localStorage.getItem('omr_cookies'); } catch (e) {}
+    gtag('consent', 'default', { analytics_storage: omrC === 'si' ? 'granted' : 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
     gtag('js', new Date());
     gtag('config', 'G-GMC2RYYY7G', { allow_google_signals: false, allow_ad_personalization_signals: false });
     document.addEventListener('click', function (e) { var a = e.target.closest && e.target.closest('a[href*="wa.me"]'); if (a) gtag('event', 'contacto_whatsapp', { metodo: 'boton' }); });
@@ -13,7 +15,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pensión alimenticia en Colombia: cómo cobrarla o reducirla desde España | Dr. Omar Martínez</title>
-  <meta name="description" content="Si vives en España y el padre o madre de tus hijos incumple la pensión en Colombia, o si necesitas modificarla, aquí te explicamos exactamente cómo actuar sin viajar." />
+  <meta name="description" content="Si vive en España y el padre o la madre de sus hijos incumple la pensión en Colombia, o si necesita modificarla, aquí le explicamos cómo actuar sin viajar." />
   <meta name="keywords" content="pensión alimenticia Colombia desde España, cobrar cuota alimentaria Colombia exterior, reducir pensión alimenticia Colombia, abogado familia Colombia España, custodia hijos Colombia exterior, incumplimiento alimentos Colombia" />
   <meta property="og:title" content="Pensión alimenticia en Colombia: cómo cobrarla o reducirla viviendo en España" />
   <meta property="og:description" content="Guía práctica para colombianos en España con hijos en Colombia. Cómo reclamar, modificar o fijar una cuota alimentaria sin viajar." />
@@ -1039,5 +1041,6 @@
     });
   </script>
 
+<script src="../cookies.js" defer></script>
 </body>
 </html>

@@ -6,6 +6,8 @@
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    var omrC; try { omrC = localStorage.getItem('omr_cookies'); } catch (e) {}
+    gtag('consent', 'default', { analytics_storage: omrC === 'si' ? 'granted' : 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
     gtag('js', new Date());
     gtag('config', 'G-GMC2RYYY7G', { allow_google_signals: false, allow_ad_personalization_signals: false });
     document.addEventListener('click', function (e) { var a = e.target.closest && e.target.closest('a[href*="wa.me"]'); if (a) gtag('event', 'contacto_whatsapp', { metodo: 'boton' }); });
@@ -1151,5 +1153,6 @@
     });
   </script>
 
+<script src="../cookies.js" defer></script>
 </body>
 </html>

@@ -6,6 +6,8 @@
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    var omrC; try { omrC = localStorage.getItem('omr_cookies'); } catch (e) {}
+    gtag('consent', 'default', { analytics_storage: omrC === 'si' ? 'granted' : 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
     gtag('js', new Date());
     gtag('config', 'G-GMC2RYYY7G', { allow_google_signals: false, allow_ad_personalization_signals: false });
     document.addEventListener('click', function (e) { var a = e.target.closest && e.target.closest('a[href*="wa.me"]'); if (a) gtag('event', 'contacto_whatsapp', { metodo: 'boton' }); });
@@ -105,6 +107,7 @@
   <h2 style="color:#0a1628;font-size:24px;margin-top:40px;">7. Cookies y Google Analytics</h2>
 
   <p>El sitio utiliza Google Analytics, con cookies de analítica, para comprender cómo los visitantes utilizan la página y mejorar su funcionamiento. En este sitio Google Analytics está configurado con las señales de Google (Google Signals) y la personalización de anuncios desactivadas.</p>
+  <p>Las cookies de analítica solo se activan si usted las acepta en el aviso de cookies que aparece al entrar en la web. Si las rechaza, no se guardan cookies de Google Analytics en su navegador. Puede cambiar su decisión en cualquier momento: <a href="#" onclick="omrCookies.cambiar(); return false;">cambiar mis preferencias de cookies</a>.</p>
 
   <p>El sitio no utiliza herramientas de publicidad, Meta Pixel ni otras herramientas de seguimiento distintas de Google Analytics. Las fuentes tipográficas se cargan desde Google Fonts, lo que implica que su navegador se conecta a servidores de Google.</p>
 
@@ -162,5 +165,6 @@
   </div>
 </footer>
 
+<script src="cookies.js" defer></script>
 </body>
 </html>
