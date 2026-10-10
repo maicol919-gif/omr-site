@@ -1,1 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="12" fill="#0B1929"/><rect x="4" y="4" width="56" height="56" rx="9" fill="none" stroke="#C9A84C" stroke-width="2"/><text x="32" y="41" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-weight="700" font-size="19" fill="#C9A84C">OMR</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+<rect width="64" height="64" rx="13" fill="#0B1929"/>
+<g fill="#C9A84C" stroke="#C9A84C" transform="translate(5.5 4) scale(.88)">
+<circle cx="32" cy="15" r="6.5" stroke="none"/>
+<circle cx="32" cy="8" r="2.8" stroke="none"/>
+<rect x="25" y="13.6" width="14" height="3" fill="#0B1929" stroke="none"/>
+<path d="M28.5 20h7v5l9.5 5 3 29H16l3-29 9.5-5z" stroke="none"/>
+<path d="M6 12h18M15 12v9M21 31l-6-10" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M6 12l-4 8M6 12l4 8M24 12l-4 8M24 12l4 8" stroke-width="1.2" fill="none"/>
+<path d="M1 20h10a5 5 0 0 1-10 0zM19 20h10a5 5 0 0 1-10 0z" stroke="none"/>
+<path d="M52 4l3.5 5v34h-7V9z" stroke="none"/>
+<rect x="45" y="43" width="14" height="3.4" rx="1" stroke="none"/>
+<rect x="50.2" y="46" width="3.6" height="9" stroke="none"/>
+<path d="M44 33l8 5" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+</g>
+</svg>
